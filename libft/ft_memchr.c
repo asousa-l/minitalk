@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asousa-l <asousa-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:34:54 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/11/18 07:50:20 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/02/14 14:50:54 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/02/14 14:59:17 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include "libft/libft.h"
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char	*str;
+	size_t		i;
 
-#endif
+	i = 0;
+	str = (const char *)s;
+	while (i < n)
+	{
+		if (str[i] == (const char)c)
+			return ((void *)&str[i]);
+		i++;
+	}
+	return (NULL);
+}

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asousa-l <asousa-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:34:54 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/11/18 07:50:20 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/02/14 11:47:43 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/02/14 11:52:10 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-#endif
+int	ft_isalnum(int c)
+{
+	if ((c >= 'a' && c <= 'z') || \
+			(c >= 'A' && c <= 'Z') || \
+			(c >= '0' && c <= '9'))
+		return (1);
+	return (0);
+}

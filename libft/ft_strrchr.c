@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asousa-l <asousa-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:34:54 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/11/18 07:50:20 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/02/14 14:44:05 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/02/14 14:45:53 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include "libft/libft.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	const char	*str;
 
-#endif
+	str = s;
+	while (*s != '\0')
+		s++;
+	if (c == 0)
+		return ((char *)s);
+	while (s >= str)
+	{
+		if (*s == (const char)c)
+			return ((char *)s);
+		s--;
+	}
+	return (0);
+}

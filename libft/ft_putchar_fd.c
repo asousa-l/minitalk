@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asousa-l <asousa-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:34:54 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/11/18 07:50:20 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/02/15 08:44:46 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/02/15 08:46:47 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

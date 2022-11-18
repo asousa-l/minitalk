@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asousa-l <asousa-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:34:54 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/11/18 07:50:20 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/02/14 19:35:00 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/02/14 19:49:32 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include "libft/libft.h"
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*dest;
+	int		i;
 
-#endif
+	i = -1;
+	dest = ft_strdup(s);
+	if (!dest)
+		return (NULL);
+	while (dest[++i])
+		dest[i] = (*f)(i, dest[i]);
+	return (dest);
+}
